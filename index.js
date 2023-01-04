@@ -38,7 +38,7 @@ function operation(){
 function buildAccount(){
     inquirer.prompt([{
         type: "input",
-        name: "name",
+        name: "accountName",
         message: "What is your name?",
     },
     {
@@ -58,16 +58,12 @@ function buildAccount(){
     }
 ])
 .then((answer) => {
-    const name = answer['name']
+    const accountName = answer['accountName']
     const email = answer['email']
-    const password = answer['password']
-    const balance = answer['balance']
     console.log(chalk.bgGreen.white('Thanks for choosing us !'))
     console.log(chalk.green('Define your account details'))
-    console.log(chalk.green(`Name: ${name}`))
+    console.log(chalk.green(`Name: ${accountName}`))
     console.log(chalk.green(`Email: ${email}`))
-    console.log(chalk.green(`Password: ${password}`))
-    console.log(chalk.green(`Balance: ${balance}`))
     console.log(chalk.green('Account created successfully'))
     console.log(chalk.green('Thanks for choosing us !'))
     if(fs.existsSync('./account.json')){
